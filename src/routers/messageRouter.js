@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { postMessage } from './controller.js';
+import { postMessage } from '../../controller.js';
 
 router.route('/').post(postMessage);
 

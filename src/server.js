@@ -1,22 +1,21 @@
-import express from 'express';
-const app = express.app();
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-dotenv.config();
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import { appRouter } from "./routers/appRouter.js";
 
+dotenv.config();
 const PORT = process.env.PORT || 8000;
 const dbUrl = process.env.MONGO_URL;
+const app = express.app();
 
-import dbConnection from './dbConnection.js';
+import dbConnection from "./dbConnection.js";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-import { router } from './router.js';
-
-app.use('/', router);
+app.use(appRouter);
 
 const startServer = async (url) => {
   try {
