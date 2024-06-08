@@ -1,7 +1,13 @@
-import express from 'express';
-const router = express.Router();
-import { postMessage } from '../../controller.js';
+import express from "express";
+import {
+  postMessage,
+  getAllMessage,
+  deleteAllMessages,
+} from "../controllers/messageController.js";
+export const messageRouter = express.Router();
 
-router.route('/').post(postMessage);
-
-export default router;
+messageRouter
+  .route("/")
+  .post(postMessage)
+  .get(getAllMessage)
+  .delete(deleteAllMessages);

@@ -7,7 +7,7 @@ export const messageSchema = new mongoose.Schema({
     required: [true, "Geben Sie einen Namen ein"],
     maxlength: [50, "Der Name darf maximal 50 Charakteren beeinhalten"],
   },
-  mail: {
+  email: {
     type: String,
     required: [true, "Geben Sie bitte eine E-Mail Address ein"],
     trim: true,
@@ -16,7 +16,6 @@ export const messageSchema = new mongoose.Schema({
   date: {
     type: Date,
     trim: true,
-    required: true,
     default: Date(),
   },
   body: {
