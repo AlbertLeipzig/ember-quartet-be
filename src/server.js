@@ -6,7 +6,7 @@ import { appRouter } from "./routers/appRouter.js";
 import { dbConnection } from "./utils/dbConnection.js";
 console.clear();
 dotenv.config();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 const dbUrl = process.env.MONGO_URL;
 const app = express();
 
